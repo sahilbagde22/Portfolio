@@ -18,7 +18,7 @@ async function testConnection() {
 
     console.log(`Testing with API Key: ${apiKey.substring(0, 10)}...`);
 
-    const modelsToTest = ["gemini-1.5-flash", "gemini-2.0-flash"];
+    const modelsToTest = ["gemini-1.5-flash", "gemini-pro"];
 
     for (const modelName of modelsToTest) {
         console.log(`\n--- Testing ${modelName} ---`);

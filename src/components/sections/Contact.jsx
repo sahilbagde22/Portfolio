@@ -22,28 +22,45 @@ const Contact = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (!supabase) {
-            setStatus('error');
-            setErrorMessage('Backend is not configured properly.');
-            return;
-        }
-
         setStatus('loading');
         setErrorMessage('');
 
         try {
-            const { error } = await supabase
-                .from('contact_messages')
-                .insert([
-                    {
-                        name: formData.name,
-                        email: formData.email,
-                        message: formData.message,
-                        created_at: new Date().toISOString() // Optional if default is set in DB
-                    }
-                ]);
+            // 1. Send via Web3Forms (Simple & Robust)
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                },
+                body: JSON.stringify({
+                    access_key: "89881c4b-14ea-4343-a04b-d4b0b08b1ea1", // User's Web3Forms Key
+                    name: formData.name,
+                    email: formData.email,
+                    message: formData.message,
+                }),
+            });
 
-            if (error) throw error;
+            const result = await response.json();
+
+            if (!result.success) {
+                console.error('Web3Forms Error:', result);
+                throw new Error(result.message || 'Failed to send email');
+            }
+
+            // 2. Save to Supabase (Backup)
+            if (supabase) {
+                await supabase
+                    .from('contact_messages')
+                    .insert([
+                        {
+                            name: formData.name,
+                            email: formData.email,
+                            message: formData.message,
+                            created_at: new Date().toISOString()
+                        }
+                    ]);
+            }
 
             setStatus('success');
             setFormData({ name: '', email: '', message: '' });
