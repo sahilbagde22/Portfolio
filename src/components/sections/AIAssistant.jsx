@@ -58,7 +58,7 @@ const AIAssistant = ({ isOpen, onToggle }) => {
 
             if (localKey) {
                 const genAI = new GoogleGenerativeAI(localKey);
-                const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+                const model = genAI.getGenerativeModel({ model: "gemini-flash-latest" });
 
                 const prompt = `
                     You are an AI assistant for Sahil Jagdish Bagade's portfolio website. Sahil is a Computer Science (AIML) student at IIIT Nagpur (2022-2026).
@@ -95,7 +95,7 @@ const AIAssistant = ({ isOpen, onToggle }) => {
                     - **Web/Tools:** React, Next.js, Docker, Git, Power BI, MongoDB, MySQL, Figma, FlutterFlow.
 
                     **🏆 Achievements:**
-                    - **Winner:** "Optimized Odyssey" National Business Case Study (E-Summit IIITN).
+                    - **Winner:** Optimized Odyssey National Business Case Study (E-Summit IIITN).
                     - **NVIDIA Certified:** Fundamentals of Deep Learning & Transformer-Based NLP Applications.
 
                     **📬 Contact:**

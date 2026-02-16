@@ -36,7 +36,7 @@ const Achievements = () => {
                             </div>
 
                             <h3 className="text-xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors">
-                                "Optimized Odyssey" Awardee
+                                Optimized Odyssey Awardee
                             </h3>
 
                             <p className="text-sm font-mono text-zinc-400 mb-4 border border-white/10 px-3 py-1 rounded-full bg-black/20">
