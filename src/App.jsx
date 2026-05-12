@@ -12,6 +12,7 @@ import Contact from './components/sections/Contact';
 import AIAssistant from './components/sections/AIAssistant';
 import CursorGlow from './components/ui/CursorGlow';
 import NeuralBackground from './components/ui/NeuralBackground';
+import MusicPlayer from './components/ui/MusicPlayer';
 
 function App() {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -32,6 +33,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <MusicPlayer />
       <AIAssistant isOpen={isChatOpen} onToggle={() => setIsChatOpen(!isChatOpen)} />
     </div>
   );
