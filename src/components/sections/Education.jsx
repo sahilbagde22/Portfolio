@@ -55,7 +55,7 @@ const Education = () => {
                         {educationData.map((edu) => (
                             <GlassCard
                                 key={edu.id}
-                                className="p-8 flex flex-col md:flex-row items-center gap-8 group transition-none"
+                                className="p-8 flex flex-col md:flex-row items-center gap-8 group transition-colors duration-500"
                                 whileHover={{
                                     scale: 1.02,
                                     borderColor: edu.theme.motionBorder,

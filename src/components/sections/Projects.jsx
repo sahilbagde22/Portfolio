@@ -60,7 +60,7 @@ const Projects = () => {
                             <ScrollReveal key={index} delay={index * 0.1} className="h-full">
                                 <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10} perspective={1000} transitionSpeed={1500} scale={1.02} className="h-full">
                                     <GlassCard
-                                        className={`flex flex-col h-full group transition-none border-zinc-200 dark:border-white/5 ${theme.shadow} ${theme.hoverBg} relative overflow-hidden`}
+                                        className={`flex flex-col h-full group transition-colors duration-500 border-zinc-200 dark:border-white/5 ${theme.shadow} ${theme.hoverBg} relative overflow-hidden`}
                                         whileHover={{
                                             borderColor: theme.glowColor,
                                             transition: { duration: 0.2, ease: "easeOut" }

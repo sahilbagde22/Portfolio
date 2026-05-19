@@ -33,7 +33,7 @@ const TechStack = () => {
 
                     {/* Full Width GlassCard */}
                     <GlassCard
-                        className="max-w-6xl mx-auto p-12 bg-black/20 transition-none"
+                        className="max-w-6xl mx-auto p-12 bg-white/40 dark:bg-black/20 transition-colors duration-500"
                         whileHover={{
                             scale: 1.01,
                             borderColor: "rgba(255, 77, 77, 1)",

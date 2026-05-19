@@ -22,7 +22,7 @@ const Achievements = () => {
                         {/* Competition Winner Card */}
                         <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10} perspective={1000} transitionSpeed={1500} scale={1.02} className="h-full">
                             <GlassCard
-                                className="p-8 md:p-10 flex flex-col items-center text-center h-full group transition-none relative overflow-hidden"
+                                className="p-8 md:p-10 flex flex-col items-center text-center h-full group transition-colors duration-500 relative overflow-hidden"
                                 whileHover={{
                                     borderColor: "rgba(234, 179, 8, 0.8)",
                                     transition: { duration: 0.2, ease: "easeOut" }
@@ -53,7 +53,7 @@ const Achievements = () => {
                         {/* Leadership Role Card */}
                         <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10} perspective={1000} transitionSpeed={1500} scale={1.02} className="h-full">
                             <GlassCard
-                                className="p-8 md:p-10 flex flex-col items-center text-center h-full group transition-none relative overflow-hidden"
+                                className="p-8 md:p-10 flex flex-col items-center text-center h-full group transition-colors duration-500 relative overflow-hidden"
                                 whileHover={{
                                     borderColor: "rgba(168, 85, 247, 0.8)",
                                     transition: { duration: 0.2, ease: "easeOut" }

@@ -23,7 +23,7 @@ const About = () => {
                         {/* Software Development Card */}
                         <Tilt tiltMaxAngleX={8} tiltMaxAngleY={8} perspective={1000} transitionSpeed={1500} scale={1.02} className="h-full">
                             <GlassCard
-                                className="p-8 md:p-12 flex flex-col h-full group transition-none relative overflow-hidden"
+                                className="p-8 md:p-12 flex flex-col h-full group transition-colors duration-500 relative overflow-hidden"
                                 whileHover={{
                                     borderColor: "rgba(255, 77, 77, 0.8)",
                                     transition: { duration: 0.2, ease: "easeOut" }
@@ -64,7 +64,7 @@ const About = () => {
                         {/* AI/ML Card */}
                         <Tilt tiltMaxAngleX={8} tiltMaxAngleY={8} perspective={1000} transitionSpeed={1500} scale={1.02} className="h-full">
                             <GlassCard
-                                className="p-8 md:p-12 flex flex-col h-full group transition-none relative overflow-hidden"
+                                className="p-8 md:p-12 flex flex-col h-full group transition-colors duration-500 relative overflow-hidden"
                                 whileHover={{
                                     borderColor: "rgba(0, 255, 159, 0.8)",
                                     transition: { duration: 0.2, ease: "easeOut" }

@@ -123,7 +123,7 @@ const Contact = () => {
 
                         {/* Contact Form */}
                         <GlassCard
-                            className="p-8 border-core-red/10 transition-none"
+                            className="p-8 border-core-red/10 transition-colors duration-500"
                             whileHover={{
                                 scale: 1.01,
                                 borderColor: "rgba(255, 77, 77, 0.8)",

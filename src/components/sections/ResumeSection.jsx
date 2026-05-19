@@ -11,7 +11,7 @@ const ResumeSection = () => {
             <div className="container mx-auto">
                 <ScrollReveal>
                     <GlassCard
-                        className="max-w-4xl mx-auto p-12 text-center border-white/5 bg-gradient-to-br from-cyber-gray/30 to-core-red/5 transition-none"
+                        className="max-w-4xl mx-auto p-12 text-center border-zinc-200 dark:border-white/5 bg-gradient-to-br from-zinc-100/50 to-core-red/5 dark:from-cyber-gray/30 dark:to-core-red/5 transition-colors duration-500"
                         whileHover={{
                             scale: 1.02,
                             borderColor: "rgba(255, 77, 77, 0.7)",
@@ -20,16 +20,16 @@ const ResumeSection = () => {
                         }}
                     >
                         <div className="flex justify-center mb-6">
-                            <div className="p-5 bg-gradient-to-br from-white/5 to-transparent rounded-full border border-white/10 shadow-lg group-hover:border-core-red/30 transition-all duration-300">
-                                <FileText size={48} className="text-zinc-400 group-hover:text-core-red transition-colors duration-300" />
+                            <div className="p-5 bg-gradient-to-br from-black/5 dark:from-white/5 to-transparent rounded-full border border-zinc-200 dark:border-white/10 shadow-lg group-hover:border-core-red/30 transition-all duration-300">
+                                <FileText size={48} className="text-zinc-500 dark:text-zinc-400 group-hover:text-core-red transition-colors duration-300" />
                             </div>
                         </div>
-
-                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 font-mono tracking-tight">
+ 
+                        <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white mb-6 font-mono tracking-tight transition-colors duration-500">
                             Resume
                         </h2>
-
-                        <p className="text-zinc-300 text-lg max-w-2xl mx-auto mb-10 leading-relaxed group-hover:text-white transition-colors duration-300">
+ 
+                        <p className="text-zinc-600 dark:text-zinc-300 text-lg max-w-2xl mx-auto mb-10 leading-relaxed group-hover:text-zinc-900 dark:group-hover:text-white transition-colors duration-300">
                             Explore my professional journey, skills, and featured projects.
                         </p>
 
