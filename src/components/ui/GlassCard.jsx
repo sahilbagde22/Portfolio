@@ -11,7 +11,7 @@ const GlassCard = ({ children, className, ...props }) => {
             }}
             whileTap={{ scale: 0.98 }}
             className={cn(
-                "backdrop-blur-xl bg-white/60 dark:bg-cyber-gray/30 border border-zinc-200 dark:border-white/5 rounded-2xl shadow-md dark:shadow-lg hover:shadow-lg dark:hover:shadow-core-red/10 transition-colors duration-200 relative overflow-hidden group will-change-transform",
+                "backdrop-blur-xl bg-white/60 dark:bg-cyber-gray/30 border border-zinc-200 dark:border-white/5 rounded-2xl shadow-md dark:shadow-lg hover:shadow-lg dark:hover:shadow-core-red/10 transition-colors duration-500 relative overflow-hidden group will-change-transform",
                 className
             )}
             {...props}
