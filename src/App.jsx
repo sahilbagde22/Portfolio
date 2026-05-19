@@ -20,7 +20,7 @@ function App() {
 
   return (
     <ThemeProvider>
-      <div className="min-h-screen text-zinc-900 dark:text-[#E0E0E0] selection:bg-core-red/30 relative bg-zinc-50 dark:bg-transparent transition-colors duration-300">
+      <div className="min-h-screen text-zinc-900 dark:text-[#E0E0E0] selection:bg-core-red/30 relative bg-transparent transition-colors duration-300">
         <NeuralBackground />
         <CursorGlow />
         <Navbar onOpenChat={() => setIsChatOpen(true)} />

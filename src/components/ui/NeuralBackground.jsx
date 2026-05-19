@@ -150,9 +150,9 @@ const NeuralBackground = () => {
     }, [theme]); // Re-run effect when theme changes
 
     return (
-        <div className={`fixed inset-0 -z-10 transition-colors duration-500 ${theme === 'light' ? 'bg-gradient-to-br from-gray-100 via-white to-gray-50' : 'bg-gradient-to-br from-[#0a0a0a] via-[#121212] to-[#1a1a1a]'}`}>
+        <div className={`fixed inset-0 -z-10 transition-colors duration-500 ${theme === 'light' ? 'bg-gradient-to-br from-[#FAF8F2] via-[#FCFAF5] to-[#F7F4EB]' : 'bg-gradient-to-br from-[#0a0a0a] via-[#121212] to-[#1a1a1a]'}`}>
             <canvas ref={canvasRef} className="absolute inset-0" />
-            <div className={`absolute inset-0 transition-opacity duration-500 pointer-events-none ${theme === 'light' ? 'bg-gradient-to-t from-white via-transparent to-transparent opacity-50' : 'bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent opacity-80'}`} />
+            <div className={`absolute inset-0 transition-opacity duration-500 pointer-events-none ${theme === 'light' ? 'bg-gradient-to-t from-[#F7F4EB] via-transparent to-transparent opacity-50' : 'bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent opacity-80'}`} />
         </div>
     );
 };
