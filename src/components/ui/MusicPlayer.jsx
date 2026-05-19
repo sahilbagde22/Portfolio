@@ -19,7 +19,7 @@ const MusicPlayer = () => {
         <div className="fixed bottom-6 left-6 md:bottom-24 md:left-auto md:right-6 z-50 flex flex-col items-start md:items-end gap-2">
             {/* The hidden audio element */}
             <audio ref={audioRef} loop>
-                <source src="/audio/bg-music.mp3" type="audio/mpeg" />
+                <source src="/projects/song.mp3" type="audio/mpeg" />
                 Your browser does not support the audio element.
             </audio>
 
