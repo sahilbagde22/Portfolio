@@ -12,7 +12,7 @@ const Achievements = () => {
                 <ScrollReveal>
                     <div className="text-center mb-16">
                         <SectionTitle>Achievements & Recognition</SectionTitle>
-                        <p className="text-zinc-300 max-w-2xl mx-auto mt-4 text-lg">
+                        <p className="text-zinc-600 dark:text-zinc-300 max-w-2xl mx-auto mt-4 text-lg">
                             Highlights of my journey in competitions and leadership roles.
                         </p>
                         <div className="w-24 h-1 bg-gradient-to-r from-core-red to-system-green mx-auto mt-6 rounded-full" />

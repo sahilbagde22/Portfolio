@@ -6,7 +6,7 @@ const SectionTitle = ({ children, className }) => {
     return (
         <div className={cn("mb-12 text-center", className)}>
             <div className="inline-flex flex-col items-center gap-4 group">
-                <h2 className="text-3xl md:text-4xl font-bold font-mono tracking-tight text-white inline-flex items-center gap-3 justify-center">
+                <h2 className="text-3xl md:text-4xl font-bold font-mono tracking-tight text-zinc-900 dark:text-white inline-flex items-center gap-3 justify-center">
                     <span className="text-core-red">&gt;</span>
                     <span className="relative z-10">{children}</span>
                     <span className="text-core-red">&lt;/&gt;</span>

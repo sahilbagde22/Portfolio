@@ -20,6 +20,14 @@ const NeuralBackground = () => {
         window.addEventListener('resize', resizeCanvas);
         resizeCanvas();
 
+        if (theme === 'light') {
+            // Clear canvas and skip the particle animation loop entirely in light theme
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            return () => {
+                window.removeEventListener('resize', resizeCanvas);
+            };
+        }
+
         const particles = [];
         const particleCount = Math.floor(window.innerWidth / 15); 
         const connectionDistance = 150; 

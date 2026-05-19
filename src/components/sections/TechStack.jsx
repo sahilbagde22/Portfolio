@@ -48,10 +48,10 @@ const TechStack = () => {
                                         <img
                                             src={tech.icon}
                                             alt={tech.name}
-                                            className={`w-full h-full object-contain transition-all duration-300 drop-shadow-md ${tech.invert ? 'invert opacity-90' : ''}`}
+                                            className={`w-full h-full object-contain transition-all duration-300 drop-shadow-md ${tech.invert ? 'dark:invert dark:opacity-90' : ''}`}
                                         />
                                     </div>
-                                    <span className="text-sm font-medium text-zinc-300 text-center font-mono">
+                                    <span className="text-sm font-medium text-zinc-600 dark:text-zinc-300 text-center font-mono">
                                         {tech.name}
                                     </span>
                                 </div>
