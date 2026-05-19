@@ -143,15 +143,15 @@ const AIAssistant = ({ isOpen, onToggle }) => {
                             initial={{ opacity: 0, scale: 0.9, y: 20 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                            className="absolute bottom-16 right-0 w-[90vw] sm:w-[400px] md:w-[500px] bg-[#121212]/90 backdrop-blur-xl border border-core-red/20 rounded-2xl shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col h-[60vh] max-h-[600px] min-h-[400px]"
+                            className="absolute bottom-16 right-0 w-[90vw] sm:w-[400px] md:w-[500px] bg-white/90 dark:bg-[#121212]/90 backdrop-blur-xl border border-core-red/20 rounded-2xl shadow-[0_0_30px_rgba(0,0,0,0.2)] dark:shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col h-[60vh] max-h-[600px] min-h-[400px]"
                         >
                             {/* Header */}
-                            <div className="p-4 border-b border-white/5 bg-core-red/5 flex justify-between items-center shrink-0">
+                            <div className="p-4 border-b border-zinc-200 dark:border-white/5 bg-core-red/5 flex justify-between items-center shrink-0">
                                 <div className="flex items-center gap-2">
                                     <Bot className="text-core-red" size={20} />
-                                    <h3 className="font-semibold text-white font-mono">AI ASSISTANT</h3>
+                                    <h3 className="font-semibold text-zinc-900 dark:text-white font-mono">AI ASSISTANT</h3>
                                 </div>
-                                <button onClick={onToggle} className="text-zinc-500 hover:text-white transition-colors">
+                                <button onClick={onToggle} className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors">
                                     <X size={18} />
                                 </button>
                             </div>
@@ -162,7 +162,7 @@ const AIAssistant = ({ isOpen, onToggle }) => {
                                     <div key={idx} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                                         <div className={`max-w-[80%] p-3 rounded-xl text-sm font-mono ${msg.role === 'user'
                                             ? 'bg-core-red text-white rounded-tr-none'
-                                            : 'bg-zinc-800 text-zinc-200 rounded-tl-none border border-white/5'
+                                            : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 rounded-tl-none border border-zinc-200 dark:border-white/5'
                                             }`}>
                                             <ReactMarkdown
                                                 components={{
@@ -182,8 +182,8 @@ const AIAssistant = ({ isOpen, onToggle }) => {
                                 ))}
                                 {isLoading && (
                                     <div className="flex justify-start">
-                                        <div className="bg-zinc-800 p-3 rounded-xl rounded-tl-none border border-white/5">
-                                            <Loader2 size={16} className="animate-spin text-zinc-400" />
+                                        <div className="bg-zinc-100 dark:bg-zinc-800 p-3 rounded-xl rounded-tl-none border border-zinc-200 dark:border-white/5">
+                                            <Loader2 size={16} className="animate-spin text-zinc-500 dark:text-zinc-400" />
                                         </div>
                                     </div>
                                 )}
@@ -191,7 +191,7 @@ const AIAssistant = ({ isOpen, onToggle }) => {
                             </div>
 
                             {/* Input */}
-                            <div className="p-4 border-t border-white/5 bg-black/20">
+                            <div className="p-4 border-t border-zinc-200 dark:border-white/5 bg-zinc-50 dark:bg-black/20">
                                 <form onSubmit={handleSend} className="flex gap-2">
                                     <input
                                         type="text"
@@ -199,7 +199,7 @@ const AIAssistant = ({ isOpen, onToggle }) => {
                                         onChange={(e) => setInput(e.target.value)}
                                         placeholder="Ask a question..."
                                         disabled={isLoading}
-                                        className="flex-1 bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-core-red focus:ring-1 focus:ring-core-red/50 font-mono placeholder:text-zinc-500 disabled:opacity-50"
+                                        className="flex-1 bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 rounded-xl px-3 py-2 text-sm text-zinc-900 dark:text-white focus:outline-none focus:border-core-red focus:ring-1 focus:ring-core-red/50 font-mono placeholder:text-zinc-400 dark:placeholder:text-zinc-500 disabled:opacity-50"
                                     />
                                     <Button type="submit" variant="primary" className="px-3 py-2 rounded-xl" disabled={isLoading}>
                                         <Send size={16} />
@@ -214,7 +214,7 @@ const AIAssistant = ({ isOpen, onToggle }) => {
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     onClick={onToggle}
-                    className="bg-core-red p-4 rounded-full shadow-[0_0_20px_rgba(255,77,77,0.4)] text-white hover:bg-red-500 transition-all border border-white/10"
+                    className="bg-core-red w-14 h-14 flex items-center justify-center rounded-full shadow-[0_0_20px_rgba(255,77,77,0.4)] text-white hover:bg-red-500 transition-all border border-white/10"
                 >
                     {isOpen ? <X size={24} /> : <MessageSquare size={24} />}
                 </motion.button>

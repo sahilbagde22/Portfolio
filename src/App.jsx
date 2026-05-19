@@ -13,12 +13,14 @@ import AIAssistant from './components/sections/AIAssistant';
 import CursorGlow from './components/ui/CursorGlow';
 import NeuralBackground from './components/ui/NeuralBackground';
 import MusicPlayer from './components/ui/MusicPlayer';
+import { ThemeProvider } from './context/ThemeContext';
 
 function App() {
   const [isChatOpen, setIsChatOpen] = useState(false);
 
   return (
-    <div className="min-h-screen text-[#E0E0E0] selection:bg-core-red/30 relative">
+    <ThemeProvider>
+      <div className="min-h-screen text-zinc-900 dark:text-[#E0E0E0] selection:bg-core-red/30 relative bg-zinc-50 dark:bg-transparent transition-colors duration-300">
       <NeuralBackground />
       <CursorGlow />
       <Navbar onOpenChat={() => setIsChatOpen(true)} />
@@ -35,7 +37,8 @@ function App() {
       <Footer />
       <MusicPlayer />
       <AIAssistant isOpen={isChatOpen} onToggle={() => setIsChatOpen(!isChatOpen)} />
-    </div>
+      </div>
+    </ThemeProvider>
   );
 }
 

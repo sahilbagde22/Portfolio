@@ -37,23 +37,36 @@ const Typewriter = ({ texts, typingSpeed = 80, deletingSpeed = 40, pauseDuration
 const Hero = () => {
     return (
         <section className="min-h-screen flex items-center justify-center pt-20 px-6 relative overflow-hidden">
-            <div className="container mx-auto text-center z-10">
+            <div className="container mx-auto text-center z-10 flex flex-col items-center">
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="relative inline-block mb-8"
+                    className="flex flex-col items-center justify-center mb-8 gap-6"
                 >
+                    <motion.div 
+                        whileHover={{ scale: 1.05 }}
+                        className="relative w-32 h-32 md:w-40 md:h-40 rounded-full p-1 bg-gradient-to-tr from-core-red to-system-green shadow-[0_0_30px_rgba(255,77,77,0.2)]"
+                    >
+                        <div className="w-full h-full rounded-full overflow-hidden bg-white dark:bg-zinc-900 border-4 border-white dark:border-[#0a0a0a]">
+                            <img 
+                                src="/projects/profile.png" 
+                                alt="Profile Avatar" 
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
+                    </motion.div>
+
                     <div className="border border-core-red/20 bg-core-red/5 backdrop-blur-sm px-6 py-2 rounded-full inline-flex items-center gap-2 text-core-red font-mono text-sm tracking-widest">
                         <span className="w-2 h-2 bg-core-red rounded-full animate-pulse" />
-                        AI/ML ENGINEER & CREATIVE DEVELOPER
+                        SOFTWARE ENGINEER & AI ENTHUSIAST
                     </div>
                 </motion.div>
 
-                <h1 className="text-5xl md:text-8xl font-bold mb-6 tracking-tighter text-white">
-                    <span className="block">DESIGNING</span>
+                <h1 className="text-5xl md:text-8xl font-bold mb-6 tracking-tighter text-zinc-900 dark:text-white">
+                    <span className="block">ENGINEERING</span>
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-core-red to-red-600">
-                        INTELLIGENCE
+                        INNOVATION
                     </span>
                 </h1>
 

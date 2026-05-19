@@ -51,12 +51,12 @@ const Experience = () => {
                                 <div>
                                     <div className="flex justify-between items-start mb-4">
                                         <div>
-                                            <h3 className="text-xl font-bold text-white mb-1">{exp.role}</h3>
+                                            <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-1">{exp.role}</h3>
                                             <p className="text-system-green font-mono text-sm">{exp.company}</p>
                                         </div>
-                                        <span className="text-zinc-500 text-xs font-mono border border-white/10 px-2 py-1 rounded bg-black/40">{exp.period}</span>
+                                        <span className="text-zinc-500 dark:text-zinc-400 text-xs font-mono border border-zinc-200 dark:border-white/10 px-2 py-1 rounded bg-black/5 dark:bg-black/40">{exp.period}</span>
                                     </div>
-                                    <p className="text-zinc-300 mb-6 text-sm leading-relaxed">{exp.description}</p>
+                                    <p className="text-zinc-600 dark:text-zinc-300 mb-6 text-sm leading-relaxed">{exp.description}</p>
                                 </div>
                                 <div className="flex flex-wrap gap-2 mt-auto">
                                     {exp.skills.map(skill => (

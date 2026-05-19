@@ -12,8 +12,8 @@ const About = () => {
                 <ScrollReveal>
                     <div className="text-center mb-16">
                         <SectionTitle>About Me</SectionTitle>
-                        <p className="text-zinc-300 max-w-3xl mx-auto mt-6 text-lg leading-relaxed">
-                            My name is <span className="text-white font-bold drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">Sahil Jagdish Bagade</span>, a Computer Science (AIML) student at <span className="text-white font-bold drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">IIIT Nagpur</span> with interests in AI/ML, web development, and software engineering. I enjoy building practical, end-to-end solutions and exploring new technologies. I’m also deeply curious about space and love learning anything fascinating about the universe 🪐.
+                        <p className="text-zinc-600 dark:text-zinc-300 max-w-3xl mx-auto mt-6 text-lg leading-relaxed">
+                            My name is <span className="text-zinc-900 dark:text-white font-bold drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">Sahil Jagdish Bagade</span>, a Computer Science (AIML) student at <span className="text-zinc-900 dark:text-white font-bold drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">IIIT Nagpur</span> with interests in AI/ML, web development, and software engineering. I enjoy building practical, end-to-end solutions and exploring new technologies. I’m also deeply curious about space and love learning anything fascinating about the universe 🪐.
                         </p>
                         <div className="w-24 h-1 bg-gradient-to-r from-core-red to-system-green mx-auto mt-8 rounded-full" />
                     </div>
@@ -32,15 +32,15 @@ const About = () => {
                                 <Code className="text-core-red" size={32} />
                             </div>
 
-                            <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-core-red transition-colors">
+                            <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-4 group-hover:text-core-red transition-colors">
                                 Software Development
                             </h3>
 
-                            <p className="text-zinc-300 leading-relaxed mb-6">
+                            <p className="text-zinc-600 dark:text-zinc-300 leading-relaxed mb-6">
                                 I build scalable and reliable software systems with a focus on clean architecture and performance. My tech stack includes Python, JavaScript, SQL, Docker, and modern frameworks for web and backend development.
                             </p>
 
-                            <p className="text-zinc-300 leading-relaxed mb-8 flex-grow">
+                            <p className="text-zinc-600 dark:text-zinc-300 leading-relaxed mb-8 flex-grow">
                                 I enjoy designing systems that are maintainable, efficient, and ready to grow with real-world users.
                             </p>
 
@@ -64,15 +64,15 @@ const About = () => {
                                 <Brain className="text-system-green" size={32} />
                             </div>
 
-                            <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-system-green transition-colors">
+                            <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-4 group-hover:text-system-green transition-colors">
                                 AI & Machine Learning
                             </h3>
 
-                            <p className="text-zinc-300 leading-relaxed mb-6">
+                            <p className="text-zinc-600 dark:text-zinc-300 leading-relaxed mb-6">
                                 As an AI enthusiast, I specialize in creating intelligent systems that learn and adapt. My work spans from deep learning research to deploying optimized models for practical applications.
                             </p>
 
-                            <p className="text-zinc-300 leading-relaxed mb-8 flex-grow">
+                            <p className="text-zinc-600 dark:text-zinc-300 leading-relaxed mb-8 flex-grow">
                                 I use PyTorch, TensorFlow to build practical solutions in computer vision, NLP, and reinforcement learning.
                             </p>
 

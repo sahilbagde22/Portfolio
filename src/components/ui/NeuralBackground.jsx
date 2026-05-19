@@ -1,7 +1,9 @@
 import React, { useEffect, useRef } from 'react';
+import { useTheme } from '../../context/ThemeContext';
 
 const NeuralBackground = () => {
     const canvasRef = useRef(null);
+    const { theme } = useTheme();
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -18,31 +20,30 @@ const NeuralBackground = () => {
         window.addEventListener('resize', resizeCanvas);
         resizeCanvas();
 
-        // Particle Config
         const particles = [];
-        const particleCount = Math.floor(window.innerWidth / 15); // Reverted density
-        const connectionDistance = 150; // Reverted distance
-        const mouseParams = { x: null, y: null, radius: 200 }; // Reverted radius
+        const particleCount = Math.floor(window.innerWidth / 15); 
+        const connectionDistance = 150; 
+        const mouseParams = { x: null, y: null, radius: 200 }; 
+
+        const particleColor = theme === 'light' ? '0, 0, 0' : '255, 255, 255';
 
         class Particle {
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.vx = (Math.random() - 0.5) * 0.5; // Slow movement
+                this.vx = (Math.random() - 0.5) * 0.5; 
                 this.vy = (Math.random() - 0.5) * 0.5;
                 this.size = Math.random() * 2 + 1;
-                this.color = `rgba(255, 255, 255, ${Math.random() * 0.3 + 0.1})`; // Subtle white/gray
+                this.color = `rgba(${particleColor}, ${Math.random() * 0.3 + 0.1})`; 
             }
 
             update() {
                 this.x += this.vx;
                 this.y += this.vy;
 
-                // Wall Collision
                 if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
                 if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
 
-                // Mouse/Touch Interaction
                 if (mouseParams.x != null) {
                     const dx = mouseParams.x - this.x;
                     const dy = mouseParams.y - this.y;
@@ -52,7 +53,7 @@ const NeuralBackground = () => {
                         const forceDirectionX = dx / distance;
                         const forceDirectionY = dy / distance;
                         const force = (mouseParams.radius - distance) / mouseParams.radius;
-                        const directionX = forceDirectionX * force * 0.5; // Reverted force
+                        const directionX = forceDirectionX * force * 0.5; 
                         const directionY = forceDirectionY * force * 0.5;
 
                         this.vx -= directionX;
@@ -79,7 +80,6 @@ const NeuralBackground = () => {
         const animate = () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            // Draw Connections
             for (let a = 0; a < particles.length; a++) {
                 for (let b = a; b < particles.length; b++) {
                     const dx = particles[a].x - particles[b].x;
@@ -89,7 +89,7 @@ const NeuralBackground = () => {
                     if (distance < connectionDistance) {
                         ctx.beginPath();
                         const opacity = 1 - distance / connectionDistance;
-                        ctx.strokeStyle = `rgba(255, 255, 255, ${opacity * 0.1})`; // Reverted opacity
+                        ctx.strokeStyle = `rgba(${particleColor}, ${opacity * 0.1})`; 
                         ctx.lineWidth = 1;
                         ctx.moveTo(particles[a].x, particles[a].y);
                         ctx.lineTo(particles[b].x, particles[b].y);
@@ -98,7 +98,6 @@ const NeuralBackground = () => {
                 }
             }
 
-            // Update and Draw Particles
             particles.forEach((particle) => {
                 particle.update();
                 particle.draw();
@@ -140,13 +139,12 @@ const NeuralBackground = () => {
             window.removeEventListener('touchstart', handleTouchStart);
             cancelAnimationFrame(animationFrameId);
         };
-    }, []);
+    }, [theme]); // Re-run effect when theme changes
 
     return (
-        <div className="fixed inset-0 -z-10 bg-gradient-to-br from-[#0a0a0a] via-[#121212] to-[#1a1a1a]">
+        <div className={`fixed inset-0 -z-10 transition-colors duration-500 ${theme === 'light' ? 'bg-gradient-to-br from-gray-100 via-white to-gray-50' : 'bg-gradient-to-br from-[#0a0a0a] via-[#121212] to-[#1a1a1a]'}`}>
             <canvas ref={canvasRef} className="absolute inset-0" />
-            {/* Optional Gradient Overlay for depth */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent opacity-80 pointer-events-none" />
+            <div className={`absolute inset-0 transition-opacity duration-500 pointer-events-none ${theme === 'light' ? 'bg-gradient-to-t from-white via-transparent to-transparent opacity-50' : 'bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent opacity-80'}`} />
         </div>
     );
 };

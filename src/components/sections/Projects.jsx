@@ -8,6 +8,7 @@ import { ExternalLink, Github, Database, Layers, ArrowRight } from 'lucide-react
 import { projects } from '../../data/projects';
 import { cn } from '../../lib/utils';
 import { motion } from 'framer-motion';
+import Tilt from 'react-parallax-tilt';
 
 const colorVariants = {
     "system-green": {
@@ -56,57 +57,58 @@ const Projects = () => {
                     {projects.map((project, index) => {
                         const theme = colorVariants[project.color] || colorVariants["system-green"];
                         return (
-                            <ScrollReveal key={index} delay={index * 0.1}>
-                                <GlassCard
-                                    className={`flex flex-col h-full group transition-none border-white/5 ${theme.shadow} ${theme.hoverBg} relative overflow-hidden`}
-                                    whileHover={{
-                                        scale: 1.02,
-                                        borderColor: theme.glowColor,
-                                        transition: { duration: 0.2, ease: "easeOut" }
-                                    }}
-                                >
-                                    {project.image && (
-                                        <div className="absolute inset-0 z-0">
-                                            <img
-                                                src={project.image}
-                                                alt={project.title}
-                                                className="w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-all duration-500 group-hover:scale-110"
-                                            />
-                                            <div className={`absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30 group-hover:via-black/50 transition-all duration-500`} />
-                                        </div>
-                                    )}
-                                    <div className="p-8 flex flex-col h-full relative z-10">
-                                        <div className="flex justify-between items-start mb-6">
-                                            <div className={`p-3 rounded-lg ${theme.bg} ${theme.text} ${theme.border} border transition-colors`}>
-                                                {index % 2 === 0 ? <Database size={24} /> : <Layers size={24} />}
+                            <ScrollReveal key={index} delay={index * 0.1} className="h-full">
+                                <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10} perspective={1000} transitionSpeed={1500} scale={1.02} className="h-full">
+                                    <GlassCard
+                                        className={`flex flex-col h-full group transition-none border-zinc-200 dark:border-white/5 ${theme.shadow} ${theme.hoverBg} relative overflow-hidden`}
+                                        whileHover={{
+                                            borderColor: theme.glowColor,
+                                            transition: { duration: 0.2, ease: "easeOut" }
+                                        }}
+                                    >
+                                        {project.image && (
+                                            <div className="absolute inset-0 z-0">
+                                                <img
+                                                    src={project.image}
+                                                    alt={project.title}
+                                                    className="w-full h-full object-cover opacity-20 dark:opacity-40 group-hover:opacity-40 dark:group-hover:opacity-80 transition-all duration-500 group-hover:scale-110"
+                                                />
+                                                <div className={`absolute inset-0 bg-gradient-to-t from-white/90 via-white/70 to-white/40 dark:from-black/90 dark:via-black/70 dark:to-black/40 group-hover:from-white/80 group-hover:via-white/40 dark:group-hover:from-black/80 dark:group-hover:via-black/40 group-hover:to-transparent transition-all duration-500`} />
                                             </div>
-                                            <div className="flex gap-2">
-                                                <a
-                                                    href={project.link}
-                                                    target="_blank"
-                                                    rel="noreferrer"
-                                                    className={`p-3 rounded-xl bg-zinc-900/80 hover:bg-zinc-900 border border-white/10 ${theme.hoverBorder} transition-all duration-300 group/icon backdrop-blur-md hover:scale-110 hover:shadow-[0_0_20px_rgba(var(--${project.color}-rgb),0.5)]`}
-                                                >
-                                                    <Github size={22} className={`text-zinc-400 group-hover/icon:${theme.text} transition-colors duration-300`} />
-                                                </a>
+                                        )}
+                                        <div className="p-8 flex flex-col h-full relative z-10">
+                                            <div className="flex justify-between items-start mb-6">
+                                                <div className={`p-3 rounded-lg ${theme.bg} ${theme.text} ${theme.border} border transition-colors`}>
+                                                    {index % 2 === 0 ? <Database size={24} /> : <Layers size={24} />}
+                                                </div>
+                                                <div className="flex gap-2">
+                                                    <a
+                                                        href={project.link}
+                                                        target="_blank"
+                                                        rel="noreferrer"
+                                                        className={`p-3 rounded-xl bg-white/80 dark:bg-zinc-900/80 hover:bg-white dark:hover:bg-zinc-900 border border-zinc-200 dark:border-white/10 ${theme.hoverBorder} transition-all duration-300 group/icon backdrop-blur-md hover:scale-110 hover:shadow-[0_0_20px_rgba(var(--${project.color}-rgb),0.5)]`}
+                                                    >
+                                                        <Github size={22} className={`text-zinc-600 dark:text-zinc-400 group-hover/icon:${theme.text} transition-colors duration-300`} />
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-3">
+                                                {project.title}
+                                            </h3>
+
+                                            <p className="text-zinc-600 dark:text-zinc-300 mb-6 flex-grow leading-relaxed">
+                                                {project.description}
+                                            </p>
+
+                                            <div className="flex flex-wrap gap-2 mt-auto pt-6 border-t border-zinc-200 dark:border-white/5">
+                                                {project.tech.map(tech => (
+                                                    <TechBadge key={tech}>{tech}</TechBadge>
+                                                ))}
                                             </div>
                                         </div>
-
-                                        <h3 className="text-2xl font-bold text-white mb-3">
-                                            {project.title}
-                                        </h3>
-
-                                        <p className="text-zinc-300 mb-6 flex-grow leading-relaxed">
-                                            {project.description}
-                                        </p>
-
-                                        <div className="flex flex-wrap gap-2 mt-auto pt-6 border-t border-white/5">
-                                            {project.tech.map(tech => (
-                                                <TechBadge key={tech}>{tech}</TechBadge>
-                                            ))}
-                                        </div>
-                                    </div>
-                                </GlassCard>
+                                    </GlassCard>
+                                </Tilt>
                             </ScrollReveal>
                         );
                     })}

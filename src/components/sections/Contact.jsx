@@ -85,16 +85,16 @@ const Contact = () => {
                     <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto items-start">
                         {/* Contact Info */}
                         <div>
-                            <h3 className="text-2xl font-bold text-white mb-6 font-mono">
+                            <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-6 font-mono">
                                 Let's Collaborate
                             </h3>
-                            <p className="text-zinc-300 mb-8 max-w-md">
+                            <p className="text-zinc-600 dark:text-zinc-300 mb-8 max-w-md">
                                 I'm always open to discussing new projects, creative ideas, or collaboration opportunities.
                             </p>
 
                             <div className="space-y-4 font-mono text-sm">
-                                <a href="mailto:study27g@gmail.com" className="flex items-center gap-4 text-zinc-300 hover:text-system-green transition-colors group">
-                                    <div className="p-3 bg-white/5 rounded-full border border-white/10 text-core-red group-hover:text-system-green group-hover:bg-system-green/10 group-hover:border-system-green transition-all duration-300 group-hover:scale-110 group-hover:-rotate-12">
+                                <a href="mailto:study27g@gmail.com" className="flex items-center gap-4 text-zinc-600 dark:text-zinc-300 hover:text-system-green dark:hover:text-system-green transition-colors group">
+                                    <div className="p-3 bg-black/5 dark:bg-white/5 rounded-full border border-zinc-200 dark:border-white/10 text-core-red group-hover:text-system-green group-hover:bg-system-green/10 group-hover:border-system-green transition-all duration-300 group-hover:scale-110 group-hover:-rotate-12">
                                         <Mail size={18} />
                                     </div>
                                     <span className="group-hover:translate-x-1 transition-transform duration-300">study27g@gmail.com</span>
@@ -105,7 +105,7 @@ const Contact = () => {
                                         href="https://github.com/sahilbagde22"
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="p-3 bg-white/5 rounded-full border border-white/10 text-zinc-300 hover:text-white hover:border-core-red hover:bg-core-red/10 transition-all duration-300 hover:scale-110 hover:-rotate-12"
+                                        className="p-3 bg-black/5 dark:bg-white/5 rounded-full border border-zinc-200 dark:border-white/10 text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:border-core-red hover:bg-core-red/10 transition-all duration-300 hover:scale-110 hover:-rotate-12"
                                     >
                                         <Github size={20} />
                                     </a>
@@ -113,7 +113,7 @@ const Contact = () => {
                                         href="https://www.linkedin.com/in/sahilbagade/"
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="p-3 bg-white/5 rounded-full border border-white/10 text-zinc-300 hover:text-white hover:border-[#0077b5] hover:bg-[#0077b5]/10 transition-all duration-300 hover:scale-110 hover:-rotate-12"
+                                        className="p-3 bg-black/5 dark:bg-white/5 rounded-full border border-zinc-200 dark:border-white/10 text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:border-[#0077b5] hover:bg-[#0077b5]/10 transition-all duration-300 hover:scale-110 hover:-rotate-12"
                                     >
                                         <Linkedin size={20} />
                                     </a>
@@ -141,7 +141,7 @@ const Contact = () => {
                                         onChange={handleChange}
                                         required
                                         disabled={status === 'loading'}
-                                        className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-core-red/50 focus:ring-1 focus:ring-core-red/50 transition-colors placeholder:text-zinc-700 font-mono disabled:opacity-50"
+                                        className="w-full bg-black/5 dark:bg-black/40 border border-zinc-200 dark:border-white/10 rounded-xl px-4 py-3 text-zinc-900 dark:text-white focus:outline-none focus:border-core-red/50 focus:ring-1 focus:ring-core-red/50 transition-colors placeholder:text-zinc-400 dark:placeholder:text-zinc-700 font-mono disabled:opacity-50"
                                         placeholder="Type your name"
                                     />
                                 </div>
@@ -154,7 +154,7 @@ const Contact = () => {
                                         onChange={handleChange}
                                         required
                                         disabled={status === 'loading'}
-                                        className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-core-red/50 focus:ring-1 focus:ring-core-red/50 transition-colors placeholder:text-zinc-700 font-mono disabled:opacity-50"
+                                        className="w-full bg-black/5 dark:bg-black/40 border border-zinc-200 dark:border-white/10 rounded-xl px-4 py-3 text-zinc-900 dark:text-white focus:outline-none focus:border-core-red/50 focus:ring-1 focus:ring-core-red/50 transition-colors placeholder:text-zinc-400 dark:placeholder:text-zinc-700 font-mono disabled:opacity-50"
                                         placeholder="Type your email"
                                     />
                                 </div>
@@ -166,7 +166,7 @@ const Contact = () => {
                                         onChange={handleChange}
                                         required
                                         disabled={status === 'loading'}
-                                        className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-core-red/50 focus:ring-1 focus:ring-core-red/50 transition-all min-h-[120px] placeholder:text-zinc-700 font-mono disabled:opacity-50"
+                                        className="w-full bg-black/5 dark:bg-black/40 border border-zinc-200 dark:border-white/10 rounded-xl px-4 py-3 text-zinc-900 dark:text-white focus:outline-none focus:border-core-red/50 focus:ring-1 focus:ring-core-red/50 transition-all min-h-[120px] placeholder:text-zinc-400 dark:placeholder:text-zinc-700 font-mono disabled:opacity-50"
                                         placeholder="Type your message..."
                                     />
                                 </div>

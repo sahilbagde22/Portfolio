@@ -69,29 +69,29 @@ const Education = () => {
                                         <img
                                             src={edu.logo}
                                             alt={edu.school}
-                                            className={`w-24 h-24 rounded-2xl object-cover border border-white/10 transition-all duration-300 shadow-lg ${edu.theme.borderColor} ${edu.theme.shadowColor}`}
+                                            className={`w-24 h-24 rounded-2xl object-cover border border-zinc-200 dark:border-white/10 transition-all duration-300 shadow-lg ${edu.theme.borderColor} ${edu.theme.shadowColor}`}
                                         />
                                     ) : (
-                                        <div className={`w-24 h-24 bg-white/5 rounded-2xl border border-white/10 flex items-center justify-center text-zinc-500 font-bold text-xl transition-all duration-300 shadow-lg ${edu.theme.borderColor} ${edu.theme.textColor} ${edu.theme.shadowColor}`}>
+                                        <div className={`w-24 h-24 bg-black/5 dark:bg-white/5 rounded-2xl border border-zinc-200 dark:border-white/10 flex items-center justify-center text-zinc-500 font-bold text-xl transition-all duration-300 shadow-lg ${edu.theme.borderColor} ${edu.theme.textColor} ${edu.theme.shadowColor}`}>
                                             {edu.logoPlaceholder}
                                         </div>
                                     )}
                                 </div>
 
                                 <div className="text-center md:text-left flex-grow">
-                                    <h3 className={`text-2xl font-bold text-white mb-2 transition-colors duration-300 ${edu.theme.textColor}`}>
+                                    <h3 className={`text-2xl font-bold text-zinc-900 dark:text-white mb-2 transition-colors duration-300 ${edu.theme.textColor}`}>
                                         {edu.school}
                                     </h3>
-                                    <p className="text-lg text-zinc-200 font-medium mb-3">
+                                    <p className="text-lg text-zinc-700 dark:text-zinc-200 font-medium mb-3">
                                         {edu.degree}
                                     </p>
 
-                                    <div className="flex flex-wrap justify-center md:justify-start gap-4 text-sm font-mono text-zinc-400">
-                                        <div className="flex items-center gap-2 bg-black/20 px-3 py-1 rounded-full border border-white/5">
+                                    <div className="flex flex-wrap justify-center md:justify-start gap-4 text-sm font-mono text-zinc-600 dark:text-zinc-400">
+                                        <div className="flex items-center gap-2 bg-black/5 dark:bg-black/20 px-3 py-1 rounded-full border border-zinc-200 dark:border-white/5">
                                             <Calendar size={14} className="text-system-green" />
                                             <span>{edu.year}</span>
                                         </div>
-                                        <div className="flex items-center gap-2 bg-black/20 px-3 py-1 rounded-full border border-white/5">
+                                        <div className="flex items-center gap-2 bg-black/5 dark:bg-black/20 px-3 py-1 rounded-full border border-zinc-200 dark:border-white/5">
                                             <MapPin size={14} className={edu.theme.iconColor} />
                                             <span>{edu.location}</span>
                                         </div>
