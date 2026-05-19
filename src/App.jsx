@@ -21,22 +21,22 @@ function App() {
   return (
     <ThemeProvider>
       <div className="min-h-screen text-zinc-900 dark:text-[#E0E0E0] selection:bg-core-red/30 relative bg-zinc-50 dark:bg-transparent transition-colors duration-300">
-      <NeuralBackground />
-      <CursorGlow />
-      <Navbar onOpenChat={() => setIsChatOpen(true)} />
-      <main className="relative z-10">
-        <Hero />
-        <About />
-        <TechStack />
-        <Projects />
-        <Achievements />
-        <Education />
-        <ResumeSection />
-        <Contact />
-      </main>
-      <Footer />
-      <MusicPlayer />
-      <AIAssistant isOpen={isChatOpen} onToggle={() => setIsChatOpen(!isChatOpen)} />
+        <NeuralBackground />
+        <CursorGlow />
+        <Navbar onOpenChat={() => setIsChatOpen(true)} />
+        <main className="relative z-10">
+          <Hero />
+          <About />
+          <TechStack />
+          <Projects />
+          <Achievements />
+          <Education />
+          <ResumeSection />
+          <Contact />
+        </main>
+        <Footer />
+        <MusicPlayer />
+        <AIAssistant isOpen={isChatOpen} onToggle={() => setIsChatOpen(!isChatOpen)} />
       </div>
     </ThemeProvider>
   );
