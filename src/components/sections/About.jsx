@@ -21,13 +21,17 @@ const About = () => {
                     <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                         {/* Software Development Card */}
                         <GlassCard
-                            className="p-8 md:p-12 flex flex-col h-full group transition-none"
+                            className="p-8 md:p-12 flex flex-col h-full group transition-none relative overflow-hidden"
                             whileHover={{
                                 scale: 1.02,
                                 borderColor: "rgba(255, 77, 77, 0.8)",
                                 transition: { duration: 0.2, ease: "easeOut" }
                             }}
                         >
+                            <div className="absolute inset-0 -z-10">
+                                <img src="/projects/software_bg.png" alt="" className="w-full h-full object-cover opacity-5 dark:opacity-10 group-hover:opacity-15 dark:group-hover:opacity-30 transition-all duration-500 group-hover:scale-110" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-white via-white/95 to-transparent dark:from-[#0a0a0a] dark:via-[#0a0a0a]/90 dark:to-transparent transition-all duration-500" />
+                            </div>
                             <div className="mb-6 w-14 h-14 bg-core-red/10 rounded-2xl flex items-center justify-center border border-core-red/20 group-hover:border-core-red/50 transition-colors">
                                 <Code className="text-core-red" size={32} />
                             </div>
@@ -53,13 +57,17 @@ const About = () => {
 
                         {/* AI/ML Card */}
                         <GlassCard
-                            className="p-8 md:p-12 flex flex-col h-full group transition-none"
+                            className="p-8 md:p-12 flex flex-col h-full group transition-none relative overflow-hidden"
                             whileHover={{
                                 scale: 1.02,
                                 borderColor: "rgba(0, 255, 159, 0.8)",
                                 transition: { duration: 0.2, ease: "easeOut" }
                             }}
                         >
+                            <div className="absolute inset-0 -z-10">
+                                <img src="/projects/ai_bg.png" alt="" className="w-full h-full object-cover opacity-5 dark:opacity-10 group-hover:opacity-15 dark:group-hover:opacity-30 transition-all duration-500 group-hover:scale-110" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-white via-white/95 to-transparent dark:from-[#0a0a0a] dark:via-[#0a0a0a]/90 dark:to-transparent transition-all duration-500" />
+                            </div>
                             <div className="mb-6 w-14 h-14 bg-system-green/10 rounded-2xl flex items-center justify-center border border-system-green/20 group-hover:border-system-green/50 transition-colors">
                                 <Brain className="text-system-green" size={32} />
                             </div>
